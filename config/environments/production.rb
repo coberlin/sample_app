@@ -12,6 +12,7 @@ SampleApp::Application.configure do
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
+  #config.serve_static_assets = true # bugfix for image loading (needed? only when not using server) CO 4/6/11
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
