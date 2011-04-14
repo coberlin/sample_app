@@ -23,7 +23,7 @@ SampleApp::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
   
-  config.action_controller.relative_url_root = '/Documents/workspace/'
+  #config.action_controller.relative_url_root = '/Documents/workspace/'
 
 end
 
