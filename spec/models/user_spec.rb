@@ -59,23 +59,23 @@ describe User do
 
  	describe "password validations" do
  			it "should require a password" do
- 				User.new(@attr.merge(:password =>"", :password_confirmation =>"")).should_not_be_valid
+ 				User.new(@attr.merge(:password =>"", :password_confirmation =>"")).should_not be_valid
  			end
  			
  			it "should require a matching password confirmation" do
- 				User.new(@attr.merge(:password_confirmation => "invalid")).should_not_be_valid
+ 				User.new(@attr.merge(:password_confirmation => "invalid")).should_not be_valid
  			end
  			
  			it "should reject short passwords" do
  				short = "a" * 5
  				hash = @attr.merge(:password => short, :password_confirmation => short)
- 				User.new(hash).should_not_be_valid
+ 				User.new(hash).should_not be_valid
  			end
  					
  			it "should reject long passwords" do
  				long = "a" * 41
  				hash = @attr.merge(:password => long, :password_confirmation => long)
- 				User.new(hash).should_not_be_valid
+ 				User.new(hash).should_not be_valid
  			end
  	end
 
@@ -89,7 +89,7 @@ describe User do
 		end
 		
 		it "should set the encrypted password" do
-			@user.encyrpted_password.should_not be_blank
+			@user.encrypted_password.should_not be_blank
 		end
 		
 		describe "has_password? method" do
